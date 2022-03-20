@@ -1,16 +1,15 @@
 class PuzzleDay2:
-
     def __init__(self, *args, **kwargs):
         self.FORWARD: str = "forward"
         self.DOWN: str = "down"
         self.UP: str = "up"
-        self.HORIZONTAL_POSITION: str = "horizontal_position"
+        self.H_POS: str = "h_pos"
         self.DEPTH: str = "depth"
         self.commands: list = []
-        self.coords: dict = {self.HORIZONTAL_POSITION: 0, self.DEPTH: 0}
+        self.coords: dict = {self.H_POS: 0, self.DEPTH: 0}
 
     def __str__(self) -> str:
-        return f"{coords[self.HORIZONTAL_POSITION] * coords[self.DEPTH]}"
+        return f"{coords[self.H_POS] * coords[self.DEPTH]}"
 
     def read_input_file(self, filename: str) -> list:
         f = open(filename, "r")
@@ -24,7 +23,7 @@ class PuzzleDay2:
     def move(self, commands: list) -> dict:
         for command in commands:
             if command[0] == self.FORWARD:
-                self.coords[self.HORIZONTAL_POSITION] += command[1]
+                self.coords[self.H_POS] += command[1]
             elif command[0] == self.DOWN:
                 self.coords[self.DEPTH] += command[1]
             elif command[0] == self.UP:
@@ -35,7 +34,7 @@ class PuzzleDay2:
         aim: int = 0
         for command in commands:
             if command[0] == self.FORWARD:
-                self.coords[self.HORIZONTAL_POSITION] += command[1]
+                self.coords[self.H_POS] += command[1]
                 self.coords[self.DEPTH] += command[1] * aim
             elif command[0] == self.DOWN:
                 aim += command[1]
@@ -44,7 +43,7 @@ class PuzzleDay2:
         return self.coords
 
     def calculate_result(self, coords: dict) -> int:
-        return coords["horizontal_position"] * coords["depth"]
+        return coords[self.H_POS] * coords[self.DEPTH]
 
 
 if __name__ == "__main__":

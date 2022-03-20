@@ -3,7 +3,6 @@ from src.day2 import PuzzleDay2
 
 
 class TestDay1(unittest.TestCase):
-
     def __init__(self, *args, **kwargs):
         super(TestDay1, self).__init__(*args, **kwargs)
         self.__sample_file: str = "data/test_day2.input"
@@ -15,13 +14,10 @@ class TestDay1(unittest.TestCase):
             ("down", 8),
             ("forward", 2),
         ]
-        self.__expected_coordinates: dict = {
-            "horizontal_position": 15,
-            "depth": 10
-        }
+        self.__expected_coordinates: dict = {"h_pos": 15, "depth": 10}
         self.__expected_result: int = 150
         self.__expected_coordinates_with_aim: dict = {
-            "horizontal_position": 15,
+            "h_pos": 15,
             "depth": 60,
         }
         self.__expected_result_with_aim: int = 900
