@@ -1,11 +1,11 @@
-
 class PuzzleDay2:
+
     def __init__(self, *args, **kwargs):
-        self.FORWARD: str = 'forward'
-        self.DOWN: str = 'down'
-        self.UP: str = 'up'
-        self.HORIZONTAL_POSITION: str = 'horizontal_position'
-        self.DEPTH: str = 'depth'
+        self.FORWARD: str = "forward"
+        self.DOWN: str = "down"
+        self.UP: str = "up"
+        self.HORIZONTAL_POSITION: str = "horizontal_position"
+        self.DEPTH: str = "depth"
         self.commands: list = []
         self.coords: dict = {self.HORIZONTAL_POSITION: 0, self.DEPTH: 0}
 
@@ -13,9 +13,9 @@ class PuzzleDay2:
         return f"{coords[self.HORIZONTAL_POSITION] * coords[self.DEPTH]}"
 
     def read_input_file(self, filename: str) -> list:
-        f = open(filename, 'r')
+        f = open(filename, "r")
         for el in f.readlines():
-            lst_el = el.strip().split(' ')
+            lst_el = el.strip().split(" ")
             tup_el = tuple([lst_el[0], int(lst_el[1])])
             self.commands.append(tup_el)
         f.close()
@@ -44,12 +44,12 @@ class PuzzleDay2:
         return self.coords
 
     def calculate_result(self, coords: dict) -> int:
-        return coords['horizontal_position'] * coords['depth']
+        return coords["horizontal_position"] * coords["depth"]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     puzzle = PuzzleDay2()
-    commands: list = puzzle.read_input_file('data/day2.input')
+    commands: list = puzzle.read_input_file("data/day2.input")
     coords: dict = puzzle.move_with_aim(commands)
     result: int = puzzle.calculate_result(coords)
     print(puzzle)
