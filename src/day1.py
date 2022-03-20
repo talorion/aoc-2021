@@ -1,6 +1,6 @@
 def read_input_file(filename: str) -> list:
     report: list = []
-    f = open(filename, "r")
+    f = open(filename, 'r')
     for el in f.readlines():
         num_el = int(el.strip())
         report.append(num_el)
@@ -37,7 +37,7 @@ def filter_report(report: list) -> list:
 
 
 if __name__ == '__main__':
-    report = read_input_file("data/day1.input")
+    report = read_input_file('data/day1.input')
     filter_report = filter_report(report)
     desc = quantify_descent(filter_report)
-    print(f"{desc}")
+    print(f'{desc}')

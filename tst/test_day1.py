@@ -3,7 +3,7 @@ from src.day1 import read_input_file, quantify_descent, filter_report
 
 
 class TestDay1(unittest.TestCase):
-    __sample_file: str = "data/test_day1.input"
+    __sample_file: str = 'data/test_day1.input'
     __sample_report: list = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
     __expected_descent: int = 7
     __filtered_sample_report: list = [607, 618, 618, 617, 647, 716, 769, 792]
