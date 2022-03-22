@@ -1,10 +1,9 @@
 def read_input_file(filename: str) -> list:
     report: list = []
-    f = open(filename, "r")
-    for el in f.readlines():
-        num_el = int(el.strip())
-        report.append(num_el)
-    f.close()
+    with open(filename, "r") as f:
+        for el in f.readlines():
+            num_el = int(el.strip())
+            report.append(num_el)
     return report
 
 

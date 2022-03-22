@@ -16,13 +16,12 @@ class PuzzleDay3:
 
     def read_input_file(self, filename: str) -> list:
         self.filename = filename
-        f = open(filename, "r")
-        while True:
-            next_line = f.readline()
-            if not next_line:
-                break
-            self.report.append(next_line.strip())
-        f.close()
+        with open(filename, "r") as f:
+            while True:
+                next_line = f.readline()
+                if not next_line:
+                    break
+                self.report.append(next_line.strip())
         return self.report
 
     def most_common_bits(self, report: list) -> str:

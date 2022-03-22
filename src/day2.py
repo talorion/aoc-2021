@@ -12,12 +12,11 @@ class PuzzleDay2:
         return f"{coords[self.H_POS] * coords[self.DEPTH]}"
 
     def read_input_file(self, filename: str) -> list:
-        f = open(filename, "r")
-        for el in f.readlines():
-            lst_el = el.strip().split(" ")
-            tup_el = tuple([lst_el[0], int(lst_el[1])])
-            self.commands.append(tup_el)
-        f.close()
+        with open(filename, "r") as f:
+            for el in f.readlines():
+                lst_el = el.strip().split(" ")
+                tup_el = tuple([lst_el[0], int(lst_el[1])])
+                self.commands.append(tup_el)
         return self.commands
 
     def move(self, commands: list) -> dict:
