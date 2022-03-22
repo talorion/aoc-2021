@@ -28,11 +28,11 @@ class PuzzleDay3:
         self.mcb = ""
         report_sz: int = len(report)
         pos_cnt: list = [0] * len(report[0])
-        for idx, num in enumerate(report):
+        for num in report:
             for idx, dig in enumerate(num):
                 pos_cnt[idx] += int(dig)
 
-        for idx, dig in enumerate(pos_cnt):
+        for dig in pos_cnt:
             if dig >= (report_sz / 2):
                 self.mcb += "1"
             else:
@@ -43,11 +43,11 @@ class PuzzleDay3:
         self.lcb = ""
         report_sz: int = len(report)
         pos_cnt: list = [0] * len(report[0])
-        for idx, num in enumerate(report):
+        for num in report:
             for idx, dig in enumerate(num):
                 pos_cnt[idx] += int(dig)
 
-        for idx, dig in enumerate(pos_cnt):
+        for dig in pos_cnt:
             if dig >= (report_sz / 2):
                 self.lcb += "0"
             else:
